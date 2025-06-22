@@ -1,9 +1,5 @@
-import { CartItem } from '../models';
+import { CartItemEntity } from 'src/entities/cart-item.entity';
 
-export function calculateCartTotal(items: CartItem[]): number {
-  return items.length
-    ? items.reduce((acc: number, { product: { price }, count }: CartItem) => {
-        return (acc += price * count);
-      }, 0)
-    : 0;
+export function calculateCartTotal(items: CartItemEntity[]): number {
+  return items.length;
 }
