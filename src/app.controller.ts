@@ -36,7 +36,7 @@ export class AppController {
     return this.authService.register(body);
   }
 
-  @UseGuards(LocalAuthGuard)
+  @UseGuards(BasicAuthGuard)
   @HttpCode(200)
   @Post('api/auth/login')
   async login(@Request() req: AppRequest) {
